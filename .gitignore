@@ -3,6 +3,7 @@
 *.aps
 !/src/
 !/.clang-format
+!/.clang-tidy
 !/.editorconfig
 !/.gitattributes
 !/.gitignore
