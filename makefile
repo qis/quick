@@ -8,6 +8,9 @@ run: build/$(system)/$(config)/rules.ninja
 	@cmake --build build/$(system)/$(config) --target quick
 	@cmake -E chdir build/$(system)/$(config) ./quick
 
+format:
+	@cmake -P "$(VCPKG_ROOT)/triplets/toolchains/format.cmake"
+
 clean:
 	@cmake -E remove_directory build/$(system)
 
