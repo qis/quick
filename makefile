@@ -14,18 +14,10 @@ format:
 clean:
 	@cmake -E remove_directory build/$(system)
 
-build/windows/debug/rules.ninja: CMakeLists.txt
+build/$(system)/debug/rules.ninja: CMakeLists.txt
 	@cmake -GNinja -DCMAKE_BUILD_TYPE=Debug \
-	  -B build/windows/debug
+	  -B build/$(system)/debug
 
-build/windows/release/rules.ninja: CMakeLists.txt
+build/$(system)/release/rules.ninja: CMakeLists.txt
 	@cmake -GNinja -DCMAKE_BUILD_TYPE=Release \
-	  -B build/windows/release
-
-build/linux/debug/rules.ninja: CMakeLists.txt
-	@cmake -GNinja -DCMAKE_BUILD_TYPE=Debug \
-	  -B build/linux/debug
-
-build/linux/release/rules.ninja: CMakeLists.txt
-	@cmake -GNinja -DCMAKE_BUILD_TYPE=Release \
-	  -B build/linux/release
+	  -B build/$(system)/release
